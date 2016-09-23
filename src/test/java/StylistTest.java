@@ -107,4 +107,12 @@ public class StylistTest {
       myStylist.delete();
       assertEquals(null, Stylist.find(myStylistId));
     }
+
+    @Test
+    public void update_updatesStylistDescription_true() {
+      Stylist myStylist = new Stylist("Jane", "Monday 8-4");
+      myStylist.save();
+      myStylist.update("Jane", "Monday 8-4");
+      assertEquals("Jane", Stylist.find(myStylist.getId()).getName());
+    }
 }
