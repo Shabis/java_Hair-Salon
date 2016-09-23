@@ -2,14 +2,37 @@
 <h4>Current Schedule: $stylist.getSchedule()</h4>
 
 <h4>Clients List:</h4>
-<ul>
   #foreach($client in $stylist.getClients())
-    <li><a href="/clients/$client.getId()">$client.getName()</a></li>
+    <a class="btn btn-default" href="/clients/$client.getId()">$client.getName()</a>
   #end
-</ul>
 
-<a class="btn btn-sucess" href="/stylists/$stylist.getId()/clients/new">Add a Client</a>
-<a class="btn btn-sucess" href="/">See All Stylists</a>
+</br>
+
+<form action="/stylists/$stylist.getId()" method="post">
+  <label for="name">Update Name</label>
+  <input class="form-control" id="name" name="name" type="text">
+
+  <label for="schedule">Change Schedule</label>
+  <input class="form-control" id="schedule" name="schedule" type="text">
+
+  </br>
+
+  <button type="submit" class="btn btn-info">Update Stylist Information</button>
+</form>
+
+</br>
+</br>
+</br>
+
+<a class="btn btn-success" href="/stylists/$stylist.getId()/clients/new">Add a Client</a>
+
+</br>
+</br>
+
+<a class="btn btn-success" href="/">See All Stylists</a>
+
+</br>
+</br>
 
 <form action="/stylist/$stylist.getId()/delete" method="post">
   <button type="submit" class="btn btn-danger" id="delete-stylist">Delete Stylist</button>
