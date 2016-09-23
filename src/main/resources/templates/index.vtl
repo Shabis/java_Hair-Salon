@@ -3,7 +3,7 @@
   #if($stylists)
     <h4>Click on a Stylist to see details:</h4>
       #foreach ($stylist in $stylists)
-        
+
         <a class="btn btn-default" href="/stylists/$stylist.getId()">$stylist.getName()</a>
         </br>
       #end
