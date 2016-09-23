@@ -1,14 +1,12 @@
 <h1>Kiki's Salon and Boutique</h1>
 
-  <h2> All Lists: </h2>
-
   #if($stylists)
-    <p>Click on a Stylist to see details:</p>
-    <ul>
+    <h4>Click on a Stylist to see details:</h4>
       #foreach ($stylist in $stylists)
-        <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+        
+        <a class="btn btn-default" href="/stylists/$stylist.getId()">$stylist.getName()</a>
+        </br>
       #end
-    </ul>
   #else
     <p>There are no stylists listed</p>
   #end
