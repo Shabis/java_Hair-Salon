@@ -1,15 +1,56 @@
-## Project Name
-Java Template
+# Hair Salon
+------
 
-## Features
-This is a template for Java class.
+In this application the administrator has the ability to input new stylists with name and days that they work. When a stylist is selected they have the ability to add/edit/delete clients.
 
-##Technologies
-Java, JUnit, Gradle, Spark, Velocity, PostgreSQL.
+<br/>
 
-## Usage
+### Setup/Installation Instructions
+------
+
+* In command prompt enter: git clone https://github.com/Shabis/java_Hair-Salon.git
+* In command prompt enter: cd java_Hair-Salon
+* In command prompt enter: gradle run
+* In web browser navigate to: http://localhost:4567
 
 
-## Author/s
+<br/>
 
-##License
+### Known Bugs
+------
+
+No known bugs.
+
+<br/>
+
+### Specifications
+------
+
+| BEHAVIOR                       | INPUT                  | OUTPUT                |
+|--------------------------------|------------------------|-----------------------|
+| Add Stylist to Database         | Name, Schedule       | Name, Schedule      |
+| Add Client to Database        | Name, Appointment, Appt Reason, Stylist  | Name, Appointment, Appt Reason, Stylist |
+| See All Stylists                | Navigate to index      | Stylist List           |
+| See all Clients of one Stylist | Click on Stylist Name   | List of Clients      |
+| Add Client to Stylist          | Name, Appointment, Appt Reason          | Name, Appointment, Appt Reason, Stylist |
+| See Client details            | Click on Name          | Name, Appointment, Appt Reason, Stylist |
+| Edit Client Details           | Name, Appointment, Appt Reason          | Name, Appointment, Appt Reason, Stylist |
+| Delete Client                 | Click 'Delete Client' | Stylists Client List  |
+<br/>
+
+### Support and Contact Details
+------
+
+If you have any questions, please contact me at Shelby_Clayton@hotmail.com.
+
+<br/>
+
+### Technology Used
+------
+
+In this project I used java, gradle, GitHub, Atom, velocity, Spark, PostgreSQL, junit and Markdown.
+
+<br/>
+
+
+Copyright (c) 2016 **_Shelby Clayton_**
