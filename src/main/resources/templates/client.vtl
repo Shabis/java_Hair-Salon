@@ -1,23 +1,29 @@
 <h1>$client.getName()</h1>
 
-<h2> Client Of: $stylist.getName() </h2>
+<h4> Client Of: $stylist.getName() </h4>
 
-<h1> Clients Schedule: $client.getSchedule()</h1>
+<h4> Clients Schedule: $client.getAppointment()</h4>
+<h4> Service Booked: $client.getService()</h4>
 
 <h2>Edit Client Information:</h2>
+</br>
 
 <form action="/stylists/$client.getStylist()/clients/$client.getId()" method="post">
   <label for="name">Update Name</label>
-  <input id="name" name="name" type="text">
+  <input class="form-control" id="name" name="name" type="text">
 
-  <label for="schedule">Update Schedule</label>
-  <input id="schedule" name="schedule" type="text">
+  <label for="appointment">Change Appointment</label>
+  <input class="form-control" id="appointment" name="appointment" type="text">
 
+  <label for="service">Change Service Booked</label>
+  <input class="form-control" id="service" name="service" type="text">
+  </br>
   <button type="submit" class="btn btn-info">Update Client Information</button>
 </form>
-
+</br>
+<a class="btn btn-info" href="/stylists/$stylist.getId()">Return to $stylist.getName()</a>
+</br>
+</br>
 <form action="/stylists/$client.getStylist()/clients/$client.getId()/delete" method="post">
   <button type="submit" class="btn btn-danger" id="delete-client">Delete Client</button>
 </form>
-
-<a href="/stylists/$stylist.getId()">Return to $stylist.getName()</a>
