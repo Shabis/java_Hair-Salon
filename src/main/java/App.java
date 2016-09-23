@@ -26,6 +26,40 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/clients", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("clients", Client.all());
+      model.put("template", "templates/clients.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/clients", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylist")));
+
+      String name = request.queryParams("name");
+      String appointment = request.queryParams("appointment");
+      String service = request.queryParams("service");
+      Client newClient = new Client(name, appointment, service, stylist.getId());
+      newClient.save();
+
+      model.put("stylist", stylist);
+      model.put("client", newClient);
+      model.put("template", "templates/client-success.vtl");
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/clients/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      Stylist stylist = Stylist.find(client.getStylist());
+      model.put("client", client);
+      model.put("stylist", stylist);
+      model.put("template", "templates/client.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
   }
 }

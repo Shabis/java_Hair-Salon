@@ -1,0 +1,23 @@
+<h1>$client.getName()</h1>
+
+<h2> Client Of: $stylist.getName() </h2>
+
+<h1> Clients Schedule: $client.getSchedule()</h1>
+
+<h2>Edit Client Information:</h2>
+
+<form action="/stylists/$client.getStylist()/clients/$client.getId()" method="post">
+  <label for="name">Update Name</label>
+  <input id="name" name="name" type="text">
+
+  <label for="schedule">Update Schedule</label>
+  <input id="schedule" name="schedule" type="text">
+
+  <button type="submit" class="btn btn-info">Update Client Information</button>
+</form>
+
+<form action="/stylists/$client.getStylist()/clients/$client.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-client">Delete Client</button>
+</form>
+
+<a href="/stylists/$stylist.getId()">Return to $stylist.getName()</a>
