@@ -70,6 +70,17 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/stylists", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("name");
+      String schedule = request.queryParams("schedule");
+      Stylist newStylist = new Stylist(name, schedule);
+      newStylist.save();
+      model.put("stylist", newStylist);
+      model.put("template", "templates/stylist-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
   }
 }
