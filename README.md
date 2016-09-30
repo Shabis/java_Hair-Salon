@@ -10,7 +10,8 @@ In this application the administrator has the ability to input new stylists with
 * In PSQL:
   * CREATE DATABASE hair_salon;
   * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, schedule varchar );
-  * CREATE TABLE clients (id serial PRIMARY KEY, name varchar, appointment varchar, service varchar);
+  * CREATE TABLE clients (id serial PRIMARY KEY, name varchar, appointment varchar, service varchar, stylist int );
+  * CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 * In command prompt enter: git clone https://github.com/Shabis/java_Hair-Salon.git
 * In command prompt enter: cd java_Hair-Salon
 * In command prompt enter: gradle run
